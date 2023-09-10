@@ -22,3 +22,12 @@
 .size-sm {
     min-height: 115px;
 }
+
+.isClickable {
+    cursor: pointer;
+}
+
+.isDraggable {
+    cursor: grab;
+    user-select: none;
+}

@@ -7,12 +7,16 @@ import classNames from 'classnames';
 const Card = ( {
     children = "I'm a card", 
     color = "primary", 
-    size = "sm"
+    size = "sm",
+    isClickable,
+    isDraggable
 } ) => {
   return (
     <div className={classNames("card", {
                     [`color-${color}`]:color,
                     [`color-${size}`]:size,
+                    "isClickable": isClickable,
+                    "isDraggable": isDraggable
     })}>
       {children}
     </div>
@@ -22,7 +26,9 @@ const Card = ( {
 Card.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.oneOf(options.colors),
-    size: PropTypes.oneOf(options.sizes)
+    size: PropTypes.oneOf(options.sizes),
+    isClickable: PropTypes.bool,
+    isDraggable: PropTypes.bool
 }
 
 export default Card;
